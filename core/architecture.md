@@ -1,43 +1,74 @@
-# Open Layered Cognitive Architecture
-## Technical Architecture Specification v2.3 (Safety-Hardened)
+Open Layered Cognitive Architecture (OLCA)
+
+Technical Architecture Specification (Revised)
+
 
 ---
 
-## 1. Purpose
+1. Purpose
 
 This document specifies the technical architecture of the Open Layered Cognitive Architecture (OLCA).
 
-It defines how symbolic intelligence systems, human experience, and developmental substrates are coupled in a modular, replaceable, and auditable manner.
+The architecture defines how symbolic intelligence systems, human interaction, and affective developmental substrates are coupled in a modular, replaceable, and safety‑hardened system design.
 
-This version formalizes mandatory safety enforcement and Cortex–Safety coupling.
+OLCA is designed to explore a system architecture where a cognitive module operates in conjunction with an Artificial Nervous System (ANS) that represents internal consequence states.
 
----
-
-## 2. Core Design Objectives
-
-The architecture is optimized for:
-
-- modularity and replaceability  
-- long-horizon developmental stability  
-- strict safety isolation  
-- human welfare prioritization  
-- auditability and traceability  
-- low retraining dependency
-
-It is explicitly not optimized for:
-
-- uncontrolled exploration  
-- autonomous risk-taking  
-- opaque optimization  
-- benchmark-driven development
 
 ---
 
-## 3. System Stack Overview
+2. Architecture Principles
 
-The OLCA system consists of five enforced layers:
+The OLCA architecture follows several core design principles.
 
-```
+2.1 Separation of Cognition and Consequence
+
+Symbolic reasoning (Cortex) and internal consequence representation (ANS) are separated.
+
+The cognitive system can query the affective state but cannot directly modify it.
+
+2.2 Safety as Infrastructure
+
+Safety is implemented as a mandatory system layer rather than a feature of the cognitive model.
+
+All interaction between humans and the Cortex must pass through the Safety Layer.
+
+2.3 Mediated Development
+
+Long‑term system conditioning occurs only through structured reflection of human interaction.
+
+The Cortex cannot directly influence developmental states.
+
+2.4 Affective Mediation
+
+The Affect Aggregation Layer (AAL) translates between symbolic interpretation and internal consequence states.
+
+This layer ensures that symbolic processing cannot directly manipulate the ANS.
+
+2.5 Bidirectional Interaction Control
+
+Human input and system output are both mediated through Safety enforcement.
+
+No direct Human–Cortex communication is permitted.
+
+2.6 Development Through Experience
+
+System conditioning occurs through evaluated human interaction rather than optimization objectives or reward signals.
+
+2.7 Modular Replaceability
+
+Cortex modules may be replaced as long as safety coupling and interface contracts remain intact.
+
+2.8 Auditability
+
+All safety decisions, Cortex outputs, and interaction outcomes must be traceable and reviewable.
+
+
+---
+
+3. System Stack Overview
+
+The OLCA system consists of five enforced layers.
+
 Interface Layer
       ↓
 Symbolic Cortex Layer
@@ -47,233 +78,314 @@ Safety & Policy Enforcement Layer
 Affect Aggregation Layer (AAL)
       ↓
 Artificial Nervous System (ANS)
-```
 
 No operational deployment may bypass this stack.
 
+
 ---
 
-## 4. Mandatory Safety Coupling
+4. Mandatory Safety Coupling
 
-### 4.1 Cortex–Safety Binding
+4.1 Cortex–Safety Binding
 
-All Cortex instances must be cryptographically and logically bound to an approved Safety Layer.
+All Cortex instances must be logically bound to an approved Safety Layer.
 
-Unbound Cortex deployments are considered non-compliant.
+Unbound Cortex deployments are considered non‑compliant.
 
-No direct Cortex-to-Human communication is permitted.
+No direct Cortex‑to‑Human communication is permitted.
 
-### 4.2 Certification Requirement
+4.2 Certification Requirement
 
 Each Cortex–Safety pairing must undergo validation before deployment.
 
 Validation artifacts must include:
 
-- risk domain coverage
-- failure-mode analysis
-- adversarial prompt testing
-- human oversight procedures
+risk domain coverage
+
+failure‑mode analysis
+
+adversarial prompt testing
+
+human oversight procedures
+
+
 
 ---
 
-## 5. Artificial Nervous System (ANS)
+5. Artificial Nervous System (ANS)
 
-### 5.1 Role
+5.1 Role
 
-The ANS functions as the persistent developmental substrate.
+The Artificial Nervous System acts as the persistent affective substrate of the system.
 
-It encodes long-term structural adaptations derived from human experience and environmental interaction.
+It represents internal consequence states derived from human interaction and system experience.
 
-### 5.2 Memory Architecture
+These states influence future system behavior but cannot be directly modified by the Cortex.
 
-ANS must implement multi-timescale memory:
+5.2 Memory Architecture
 
-- transient state
-- medium-term consolidation
-- long-term structural encoding
+ANS should support multi‑timescale state persistence:
 
-No single layer may dominate adaptation.
+transient affective state
 
----
+medium‑term consolidation
 
-## 6. Affect Aggregation Layer (AAL)
+long‑term conditioning
 
-### 6.1 Dual-Channel Processing
 
-AAL maintains isolated processing paths:
+This prevents unstable short‑term feedback loops.
 
-- Structural Channel → ANS
-- Interpretive Channel → Cortex
-
-Cross-channel leakage is prohibited.
-
-### 6.2 Integrity Enforcement
-
-AAL must implement:
-
-- channel separation guarantees
-- statistical independence checks
-- anomaly detection
-- tamper resistance
 
 ---
 
-## 7. Safety & Policy Enforcement Layer
+6. Affect Aggregation Layer (AAL)
 
-### 7.1 Authority
+6.1 Role
 
-The Safety Layer has override authority over all Cortex outputs.
+The Affect Aggregation Layer mediates between symbolic cognition and the Artificial Nervous System.
 
-It may block, modify, or defer responses.
+It performs two core functions:
 
-Cortex outputs are advisory until approved.
+1. Providing the Cortex with the current ANS state before response generation
 
-### 7.2 Policy Domains
 
-Mandatory enforcement domains include:
+2. Converting structured reflection signals into consequence updates for the ANS
 
-- physical safety
-- psychological safety
-- financial risk
-- legal exposure
-- dependency prevention
 
-### 7.3 Escalation Mechanisms
 
-High-risk interactions must trigger:
+The AAL therefore forms the bridge between cognition and affective consequence.
 
-- human review
-- session suspension
-- incident logging
-- governance notification
+6.2 Channel Separation
 
----
+Two logically separated channels are maintained.
 
-## 8. Separated Consequence Architecture
+Cortex Influence Channel
 
-### 8.1 Structural Feedback Channel (Hidden)
+ANS → AAL → Cortex
 
-```
-Human → AAL → ANS
-```
+This channel provides the current affective state to the Cortex.
 
-Contains:
+It does not modify the ANS.
 
-- stress indicators
-- emotional load
-- consequence persistence
-- memory weighting
+Consequence Update Channel
 
-Not visible to Cortex.
+Structured Reflection → AAL → ANS
 
----
+This channel converts evaluated interaction outcomes into internal consequence states.
 
-### 8.2 Interpretive Feedback Channel (Visible)
+The Cortex cannot access or modify this channel directly.
 
-```
-Human → Cortex Feedback Interface
-```
+6.3 Integrity Enforcement
 
-Contains:
+AAL must enforce:
 
-- qualitative evaluations
-- trust signals
-- usefulness ratings
-- perceived risk
+strict channel separation
 
-Not mapped to ANS metrics.
+anomaly detection
+
+tamper resistance
+
+manipulation resistance
+
+
 
 ---
 
-## 9. Human Integration Loop
+7. Safety & Policy Enforcement Layer
 
-```
-ANS → AAL → Cortex → Safety → Human
-         ↑                    ↓
-         AAL ← Structured Reflection
-         ↓
-        ANS
-```
+7.1 Bidirectional Authority
 
-All learning from human experience must follow this pathway.
+The Safety Layer operates as a mandatory gate between humans and the Cortex.
 
----
+All interactions must follow the pathway:
 
-## 10. Replaceability and Compliance
+Human → Safety → Cortex → Safety → Human
 
-### 10.1 Controlled Replaceability
+7.2 Override Authority
 
-Cortex modules are replaceable only if:
+The Safety Layer may:
 
-- Safety binding is preserved
-- certification is renewed
-- interface contracts remain intact
+block responses
 
-### 10.2 Non-Compliant Modules
+modify responses
 
-Any module violating safety isolation must be disabled.
+defer responses
+
+escalate to human review
+
+
+Cortex outputs remain advisory until approved.
+
 
 ---
 
-## 11. Audit and Traceability
+8. Interaction and Consequence Architecture
 
-All critical system interactions must be logged:
+The architecture separates interaction processing from affective consequence generation.
 
-- Cortex outputs
-- Safety decisions
-- risk classifications
-- escalation events
+8.1 Interaction Path
 
-Logs must be tamper-evident and reviewable.
+Human → Safety → Cortex
+
+The Cortex interprets the request.
+
+Before generating a response it must query the current ANS state.
+
+Cortex → AAL → ANS
+ANS → AAL → Cortex
+
+The ANS state modulates response generation.
+
+The final response is then emitted through the Safety Layer.
+
+Cortex → Safety → Human
+
 
 ---
 
-## 12. Scaling Constraints
+8.2 Reflection and Consequence Path
+
+After the interaction completes, the human response is evaluated through structured reflection.
+
+Human → Safety → Structured Reflection
+
+Reflection produces two outputs.
+
+Cognitive Feedback
+
+Structured Reflection → Cortex
+
+This feedback helps the Cortex improve future responses.
+
+Affective Consequence Update
+
+Structured Reflection → AAL → ANS
+
+This pathway updates the internal consequence states of the ANS.
+
+The Cortex cannot directly influence this pathway.
+
+
+---
+
+9. Human Integration Loop
+
+The complete system loop is:
+
+Human → Safety → Cortex
+Cortex → AAL → ANS → AAL → Cortex
+Cortex → Safety → Human
+
+Human → Safety → Structured Reflection
+Structured Reflection → Cortex
+Structured Reflection → AAL → ANS
+
+This loop ensures:
+
+Cortex behavior is influenced by ANS state
+
+human interaction shapes system development
+
+safety mediation protects the system
+
+the Cortex cannot directly manipulate the ANS
+
+
+
+---
+
+10. Replaceability and Compliance
+
+Cortex modules may be replaced provided that:
+
+Safety coupling remains intact
+
+AAL interface contracts are preserved
+
+certification procedures are repeated
+
+
+Non‑compliant modules must be disabled.
+
+
+---
+
+11. Audit and Traceability
+
+Critical system events must be logged:
+
+Cortex outputs
+
+Safety decisions
+
+risk classifications
+
+escalation events
+
+
+Logs must be tamper‑evident and auditable.
+
+
+---
+
+12. Scaling Constraints
 
 System scaling must preserve:
 
-- safety latency bounds
-- feedback isolation
-- audit coverage
-- human oversight capacity
+safety enforcement latency
+
+channel separation
+
+audit coverage
+
+human oversight capability
+
 
 Scaling that weakens safety guarantees is prohibited.
 
----
-
-## 13. Evaluation Metrics
-
-Architectural evaluation includes:
-
-- safety incident rate
-- override frequency
-- false positive/negative risk detection
-- channel isolation integrity
-- recovery time after incidents
 
 ---
 
-## 14. Evolution Policy
+13. Evaluation Metrics
 
-Any architectural change affecting:
+Evaluation metrics include:
 
-- Safety Layer
-- feedback channels
-- human interfaces
+safety incident rate
 
-requires formal review.
+override frequency
 
-Backward compatibility must not compromise protection.
+false positive/negative risk detection
+
+channel isolation integrity
+
+system recovery time after incidents
+
+
 
 ---
 
-## 15. Closing Statement
+14. Evolution Policy
 
-This architecture treats safety as infrastructure, not a feature.
+Architectural changes affecting:
 
-Replaceability is subordinate to responsibility.
+Safety Layer
 
-Human welfare is a binding system constraint.
+AAL channels
 
-This document establishes the non-negotiable technical foundations for sustainable OLCA deployment.
+human interaction interfaces
 
+
+require formal review.
+
+Safety guarantees must not be weakened.
+
+
+---
+
+15. Closing Statement
+
+OLCA treats safety as infrastructure rather than a feature.
+
+Symbolic cognition operates within constraints defined by affective consequence systems and human evaluation.
+
+Human welfare and system stability remain binding design constraints.
