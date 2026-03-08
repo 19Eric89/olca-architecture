@@ -20,6 +20,40 @@ The hypothesis explored here is that emotional states may require such internal 
 
 The ANS is therefore not a cognitive component but a regulatory and consequence representing system that interacts with cognition.
 
+## OLCA Conceptual Loop
+
+```mermaid
+flowchart LR
+
+Human[Human<br/>Requests and receives responses]
+
+Safety[Safety & Policy Enforcement Layer<br/>Bidirectional interaction control]
+
+Cortex[Symbolic Cortex Layer (LLM)<br/>Request interpretation and response generation]
+
+Reflection[Structured Reflection<br/>Evaluation of interaction]
+
+AAL[Affect Aggregation Layer<br/>Affective mediation]
+
+ANS[Artificial Nervous System<br/>Conditioned internal consequence states]
+
+Human --> Safety
+Safety --> Cortex
+
+Cortex -- query ANS state --> AAL
+AAL --> ANS
+ANS -- current affective state --> AAL
+AAL --> Cortex
+
+Cortex --> Safety
+Safety --> Human
+
+Human --> Safety
+Safety --> Reflection
+Reflection --> AAL
+AAL --> ANS
+```
+
 Architecture Concept
 
 Within OLCA a cognitive system such as a large language model operates as a cognitive layer responsible for reasoning, language, and interaction.
