@@ -83,6 +83,8 @@ Their functions include
 3. preventing direct manipulation of the ANS by external inputs
 
 
+The Affect Aggregation Layer represents one of the most challenging components of the architecture. It is responsible for translating symbolic evaluations of interactions into internal consequence signals that influence the Artificial Nervous System. Designing such a transformation while preventing manipulation and maintaining system stability remains an open research problem.
+
 
 The focus of the architecture is therefore the ANS itself. The surrounding layers only exist to ensure safe and controlled interaction with it.
 
