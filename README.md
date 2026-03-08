@@ -64,6 +64,8 @@ In OLCA the symbolic cortex operates as a cognitive module connected to an artif
 
 Architecture Concept
 
+The OLCA architecture is loosely inspired by organizational principles found in biological nervous systems. Cognitive processing is separated from affective consequence representation, while aggregation layers mediate between both domains. This structure creates feedback loops between behavior, evaluation, and internal system state.
+
 Within OLCA a cognitive system such as a large language model operates as a cognitive layer responsible for reasoning, language, and interaction.
 
 The Artificial Nervous System exists alongside this cognitive layer and represents internal consequences that may influence long term system regulation.
