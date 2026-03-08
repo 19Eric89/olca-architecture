@@ -21,34 +21,36 @@ The hypothesis explored here is that emotional states may require such internal 
 The ANS is therefore not a cognitive component but a regulatory and consequence representing system that interacts with cognition.
 
 
-
 ## OLCA Conceptual Loop
 
 ```mermaid
 flowchart LR
 
 Human[Human]
-Safety[Safety and Policy Enforcement]
-Cortex[Symbolic Cortex Layer LLM]
+Safety[Safety Layer]
+Cortex[Symbolic Cortex LLM]
 Reflection[Structured Reflection]
 AAL[Affect Aggregation Layer]
 ANS[Artificial Nervous System]
 
-Human --> Safety
+Human -- request --> Safety
 Safety --> Cortex
 
-Cortex --> AAL
+Cortex -- query state --> AAL
 AAL --> ANS
-ANS --> AAL
-AAL --> Cortex
+ANS -- affective state --> AAL
+AAL -- influence --> Cortex
 
-Cortex --> Safety
+Cortex -- response --> Safety
 Safety --> Human
 
-Human --> Safety
+Human -- reaction --> Safety
 Safety --> Reflection
-Reflection --> AAL
+
+Reflection -- affective update --> AAL
 AAL --> ANS
+
+Reflection -- feedback --> Cortex
 ```
 
 Architecture Concept
