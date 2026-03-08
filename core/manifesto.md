@@ -13,11 +13,17 @@ It does not create developmental continuity.
 
 Intelligence that persists over time requires structure, memory, and consequence integration.
 
+OLCA can be interpreted as a multi-layered cybernetic system in which behavior, evaluation, and internal consequence states form a continuous regulatory loop.
+
+The architecture combines ideas related to dual-process systems, cybernetic feedback loops, and separated consequence substrates. Instead of embedding these mechanisms within a single model, OLCA externalizes them as explicit architectural layers.
+
 OLCA begins from this premise.
 
 ---
 
 ## 2. Development Requires Substrate
+
+The symbolic cortex operates within a regulatory loop shaped by an Artificial Nervous System that encodes consequence states derived from human interaction.
 
 Symbolic models generate outputs.
 
