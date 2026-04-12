@@ -95,16 +95,12 @@ It is responsible for:
 - generation of outputs
 
 Multi-Cortex Extension
-
+```mermaid
 flowchart LR
-    M1[Model A]
-    M2[Model B]
-    M3[Model C]
-
-    M1 --> CX[Cortex Layer]
-    M2 --> CX
-    M3 --> CX
-
+    M1["Model A"] --> CX["Cortex Layer"]
+    M2["Model B"] --> CX
+    M3["Model C"] --> CX
+```
 The Cortex is not restricted to a single model. It may include:
 
 - multiple models operating in parallel
