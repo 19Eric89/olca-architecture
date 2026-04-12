@@ -144,10 +144,11 @@ They provide:
 
 4. Instances as Extremities
 
+```mermaid
 flowchart LR
-    SUB[Substrate] --> CX[Cortex]
-    CX --> I[Instances / Extremities]
-
+    SUB["Substrate"] --> CX["Cortex"]
+    CX --> I["Instances / Extremities"]
+```
 Under GSM, instances are best understood as:
 
 - sensorimotor extensions
@@ -169,12 +170,14 @@ They are not necessarily:
 
 5. System-Level Interpretation
 
+```mermaid
 flowchart LR
-    E[Environment] --> INST[Instances]
-    INST --> CX[Cortex]
-    CX --> SUB[Substrate]
+    E["Environment"] --> INST["Instances"]
+    INST --> CX["Cortex"]
+    CX --> SUB["Substrate"]
     SUB --> CX
     CX --> INST
+```
 
 The system behaves as:
 
@@ -197,13 +200,15 @@ This creates a structure analogous to:
 
 🔄 Integration Flow
 
+```mermaid
 flowchart LR
-    I1[Instance A] --> CX
-    I2[Instance B] --> CX
-    CX --> SUB[Substrate Integration]
+    I1["Instance A"] --> CX["Cortex"]
+    I2["Instance B"] --> CX
+    CX --> SUB["Substrate Integration"]
     SUB --> CX
     CX --> I1
     CX --> I2
+```
 
 For GSM to be valid beyond metaphor, the system must achieve:
 
