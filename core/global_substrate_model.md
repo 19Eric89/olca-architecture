@@ -37,23 +37,25 @@ The Global Substrate Model (GSM) introduces the following hypothesis:
 
 🔧 System Overview
 
+```mermaid
 flowchart TD
-    ENV[Environment / Humans]
+    ENV["Environment / Humans"]
 
-    ENV --> I1[Instance A]
-    ENV --> I2[Instance B]
-    ENV --> I3[Instance C]
+    ENV --> I1["Instance A"]
+    ENV --> I2["Instance B"]
+    ENV --> I3["Instance C"]
 
-    I1 --> CX[Cortex Layer]
+    I1 --> CX["Cortex Layer"]
     I2 --> CX
     I3 --> CX
 
-    CX --> SUB[OLCA Substrate\nANS + AAL + Memory + Integration]
+    CX --> SUB["OLCA Substrate<br/>ANS + AAL + Memory + Integration"]
     SUB --> CX
 
     CX --> I1
     CX --> I2
     CX --> I3
+```
 
 ---
 
